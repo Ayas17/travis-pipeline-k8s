@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: createticketmock-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: createticket_mock
+  template:
+    metadata:
+      labels:
+        component: createticket_mock
+    spec:
+      containers:
+        - name: createticketmock
+          image: mkulaa1/createticketmock:1.0
+          ports:
+          - containerPort: 8284

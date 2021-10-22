@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: createticket-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: createticket_api
+  ports:
+    - port: 7879
+      targetPort: 7879

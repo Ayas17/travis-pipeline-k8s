@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: createticket-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: createticket_api
+  template:
+    metadata:
+      labels:
+        component: createticket_api
+    spec:
+      containers:
+        - name: createticket
+          image: mkulaa1/createticket:1.0
+          ports:
+            - containerPort: 7879
+          env:
+            - name: BW_PROFILE
+              value: Docker
+            - name: SPH_PORT
+              value: '8284'
+            - name: SPH_HOST
+              value: createticketmock-cluster-ip-service
+            - name: SPH_TimeoutInMilliSeconds
+              value: '15000'
+            - name: SPH_URI
+              value: /services/createTicket/
