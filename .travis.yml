@@ -12,14 +12,14 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
-  - gcloud config set project multi-k8s-323607
+  - gcloud config set project hello-k8s-329805
   - gcloud config set compute/zone us-central1-c
-  - gcloud container clusters get-credentials multi-cluster
+  - gcloud container clusters get-credentials hello-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker build -t mkulaa1/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t mkulaa1/react-app-test -f ./react-app/Dockerfile.dev ./react-app
 
 script:
-  - docker run -e CI=true mkulaa1/react-test npm test
+  - docker run -e CI=true mkulaa1/react-app-test npm test
 
 deploy:
   provider: script
