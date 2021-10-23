@@ -1,5 +1,5 @@
-docker build -t mkulaa1/hello-ticket:latest -t mkulaa1/hello-ticket:$SHA -f ./CreateTicket.application_1.0.0/Dockerfile ./CreateTicket.application_1.0.0
-docker build -t mkulaa1/hello-ticket-mock:latest -t mkulaa1/hello-ticket-mock:$SHA -f ./CreateTicketTest.application_1.0.0/Dockerfile ./CreateTicketTest.application_1.0.0
+docker build -t mkulaa1/hello-ticket:latest -t mkulaa1/hello-ticket:$SHA -f ./CreateTicket/Dockerfile ./CreateTicket
+docker build -t mkulaa1/hello-ticket-mock:latest -t mkulaa1/hello-ticket-mock:$SHA -f ./CreateTicketMock/Dockerfile ./CreateTicketMock
 
 docker push mkulaa1/hello-ticket:latest
 docker push mkulaa1/hello-ticket-mock:latest
