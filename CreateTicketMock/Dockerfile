@@ -1,4 +1,4 @@
-FROM hello-image
+FROM mkulaa1/hello-image
 
 ADD CreateTicketMock.application_1.0.0.ear /
 EXPOSE 8284
