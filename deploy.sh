@@ -8,5 +8,6 @@ docker push mkulaa1/hello-ticket:$SHA
 docker push mkulaa1/hello-ticket-mock:$SHA
 
 kubectl apply -f k8s
+
 kubectl set image deployments/createticket-deployment createticket=mkulaa1/hello-ticket:$SHA
 kubectl set image deployments/createticketmock-deployment createticketmock=mkulaa1/hello-ticket-mock:$SHA
