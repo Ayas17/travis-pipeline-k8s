@@ -1,3 +1,4 @@
+docker pull mkulaa1/hello-image:latest
 docker build -t mkulaa1/hello-ticket:latest -t mkulaa1/hello-ticket:$SHA -f ./CreateTicket/Dockerfile ./CreateTicket
 docker build -t mkulaa1/hello-ticket-mock:latest -t mkulaa1/hello-ticket-mock:$SHA -f ./CreateTicketMock/Dockerfile ./CreateTicketMock
 
